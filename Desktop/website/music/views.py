@@ -6,3 +6,6 @@ from django.http import HttpResponse
 def index(request):
     pumi = " vivi"
     return HttpResponse("<h1>This is the music"+pumi+" app homepage</h1>")
+
+#def index(request)=
+#    ("Car": "Suzuki"})
