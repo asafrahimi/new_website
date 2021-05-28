@@ -18,8 +18,15 @@ class IdList(APIView):
     def get(self, request):
         id = Id.objects.all()
         serializer = IdSerializer(id, many=True)
-        return HttpResponse(serializer.data)
+        return Response(serializer.data)
 
+
+    def post(self, request, *args, **kwargs):
+        id_data = request.data
+        new_id = Id.objects.create(name=id_data["name"], last_name=id_data["last_name"], age=id_data["age"])
+        new_id.save()
+        serializer = IdSerializer(new_id)
+        return Response(serializer.data)
 
 
 

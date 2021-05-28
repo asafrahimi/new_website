@@ -7,6 +7,8 @@ class Id(models.Model):
     last_name = models.CharField(max_length = 50)
     age = models.IntegerField()
 
+    #def __str__(self):
+    #    return self.age
 
 class Professions(models.Model):
     first_profession = models.CharField(max_length = 20)
